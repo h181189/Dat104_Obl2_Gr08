@@ -1,5 +1,6 @@
 package no.hvl.dat104.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,6 +12,7 @@ public class Registration {
 
 	@Id
 	private Integer phone;
+	@Column(name = "first_name")
 	private String firstName;
 	private String surname;
 	private boolean sex;
