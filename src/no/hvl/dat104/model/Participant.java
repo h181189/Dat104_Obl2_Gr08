@@ -3,26 +3,23 @@ package no.hvl.dat104.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-// TODO add schema name
-@Table(schema = "", name = "registration")
-public class Registration {
+public class Participant {
 
 	@Id
-	private Integer phone;
+	private String phone;
 	@Column(name = "first_name")
 	private String firstName;
 	private String surname;
 	private boolean sex;
 	private boolean paid;
 
-	public Registration() {
+	public Participant() {
 
 	}
 
-	public Registration(Integer phone, String firstName, String surname, boolean sex, boolean paid) {
+	public Participant(String phone, String firstName, String surname, boolean sex, boolean paid) {
 		this.phone = phone;
 		this.firstName = firstName;
 		this.surname = surname;
@@ -30,11 +27,11 @@ public class Registration {
 		this.paid = paid;
 	}
 
-	public Integer getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(Integer phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 

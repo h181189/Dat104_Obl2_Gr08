@@ -1,4 +1,4 @@
-CREATE TABLE registration (
+CREATE TABLE participant (
 	phone CHAR(8) NOT NULL,
 	first_name VARCHAR(64) NOT NULL,
 	surname VARCHAR(64) NOT NULL,
