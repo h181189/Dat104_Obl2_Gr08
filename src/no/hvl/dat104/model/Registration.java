@@ -1,17 +1,17 @@
-package no.hvl.dat104.modules;
+package no.hvl.dat104.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-//TODO add schema name
+// TODO add schema name
 @Table(schema = "", name = "registration")
 public class Registration {
 
 	@Id
 	private Integer phone;
-	private String first_name;
+	private String firstName;
 	private String surname;
 	private boolean sex;
 	private boolean paid;
@@ -20,12 +20,12 @@ public class Registration {
 
 	}
 
-	public Registration(Integer phone, String first_name, String surname, boolean sex, boolean paid) {
-		this.phone= phone;
-		this.first_name=first_name;
-		this.surname=surname;
-		this.sex=sex;
-		this.paid=paid;
+	public Registration(Integer phone, String firstName, String surname, boolean sex, boolean paid) {
+		this.phone = phone;
+		this.firstName = firstName;
+		this.surname = surname;
+		this.sex = sex;
+		this.paid = paid;
 	}
 
 	public Integer getPhone() {
@@ -36,19 +36,19 @@ public class Registration {
 		this.phone = phone;
 	}
 
-	public String getFirst_name() {
-		return first_name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getSurname() {
 		return surname;
 	}
 
-	public void setSur_name(String surname) {
+	public void setSurname(String surname) {
 		this.surname = surname;
 	}
 
@@ -68,4 +68,3 @@ public class Registration {
 		this.paid = paid;
 	}
 }
-
