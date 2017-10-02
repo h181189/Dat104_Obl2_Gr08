@@ -1,0 +1,8 @@
+# Java
+build/
+bin/
+*.class
+.classpath
+
+# macOS
+.DS_Store
