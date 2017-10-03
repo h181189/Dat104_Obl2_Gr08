@@ -8,10 +8,10 @@
 <h2>Logg inn</h2>
 <p>Det er kun registrerte deltagere som får se deltagerlisten.
 Logg inn ved å gi mobil-nummeret ditt.</p>
-<form action="deltagerliste.html">
+<form method="POST">
   <fieldset>
     <legend>Logg inn</legend>
-    <p>Mobil: <input type="password" name="mobil" value="" />
+    <p>Mobil: <input type="text" name="phone" value="" />
     <font color="red">${ error }</font></p>
     <p><input type="submit" value="Logg inn" /></p>
   </fieldset>

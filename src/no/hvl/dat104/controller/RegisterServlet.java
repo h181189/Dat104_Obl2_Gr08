@@ -72,6 +72,7 @@ public class RegisterServlet extends HttpServlet {
 			session.setAttribute("participant", p);
 			response.sendRedirect("confirmation");
 		} else {
+			form.clear();
 			response.sendRedirect("register");
 		}
 		
