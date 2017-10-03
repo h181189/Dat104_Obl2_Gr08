@@ -21,8 +21,8 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<p>
-		<a href="ferdig.html">Ferdig</a>
-	</p>
+	<form method="POST">
+		<input type="submit" value="ferdig"/>
+	</form>
 </body>
 </html>

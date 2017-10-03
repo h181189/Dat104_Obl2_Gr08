@@ -1,10 +1,9 @@
 package no.hvl.dat104.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.List;
 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,31 +17,30 @@ import no.hvl.dat104.model.Participant;
 @WebServlet("/ParticipantList")
 public class ParticipantListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	@EJB
 	ParticipantHandler databaseHandler = new ParticipantHandler();
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		
 		HttpSession session = request.getSession(false);
 		if (session == null || session.getAttribute("phone") == null) {
-			response.sendRedirect("LoginServlet");
+			response.sendRedirect("login");
 		} else {
 			String cPhone = (String) session.getAttribute("phone");
 			request.setAttribute("phone", cPhone);
-			ArrayList<Participant> list = (ArrayList<Participant>) databaseHandler.getAllParticipants();
+			List<Participant> list = databaseHandler.getAllParticipants();
 			
-			Collections.sort(list, new Comparator<Participant>() {
-		        @Override
-		        public int compare(Participant par0, Participant par1)
-		        {
-		            return  (par0.getFirstName()+par0.getSurname()).compareTo((par1.getFirstName())+par1.getSurname());
-		        }
-		    });
 			request.setAttribute("participant", list);
 
 			request.getRequestDispatcher("/participant.jsp").forward(request, response);
-			
-			
-
 		}
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		HttpSession session = req.getSession(false);
+		session.invalidate();
+		resp.sendRedirect("done.html");
 	}
 }

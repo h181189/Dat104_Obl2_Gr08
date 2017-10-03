@@ -16,7 +16,7 @@ import no.hvl.dat104.handler.ParticipantHandler;
  * Servlet implementation class RegisterPayment
  */
 @WebServlet("/registerPayment")
-public class RegisterPayment extends HttpServlet {
+public class RegisterPaymentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@EJB
