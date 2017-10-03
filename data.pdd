@@ -1,0 +1,4 @@
+INSERT INTO participant VALUES
+('12345678', 'Anders', 'Grinde', true, true),
+('98686957', 'Bendik', 'Johansen', false, false),
+('11112222', 'Endre', 'Botnen', true, false);
