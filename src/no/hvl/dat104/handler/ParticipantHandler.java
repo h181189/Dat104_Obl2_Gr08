@@ -24,9 +24,13 @@ public class ParticipantHandler {
 		return query.getResultList();
 	}
 	
-	public void payFor(String number) {
-		Participant p = em.find(Participant.class, number);
-		p.setPaid(true);
+	public Participant getParticipant(String phone) {
+		return em.find(Participant.class, phone);
+	}
+	
+	public void payFor(String phone) {
+		getParticipant(phone).setPaid(true);
 	}
 	
 }
+	
