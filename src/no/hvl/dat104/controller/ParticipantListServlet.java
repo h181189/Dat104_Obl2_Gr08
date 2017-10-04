@@ -29,10 +29,9 @@ public class ParticipantListServlet extends HttpServlet {
 		} else {
 			String cPhone = (String) session.getAttribute("phone");
 			request.setAttribute("phone", cPhone);
-			List<Participant> list = databaseHandler.getAllParticipants();
-			
-			request.setAttribute("participant", list);
-
+			List<Participant> participantList = databaseHandler.getAllParticipantsSorted();
+					
+			request.setAttribute("participant", participantList);
 			request.getRequestDispatcher("/participant.jsp").forward(request, response);
 		}
 	}

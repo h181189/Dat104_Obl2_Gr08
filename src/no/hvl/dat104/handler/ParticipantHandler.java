@@ -24,6 +24,11 @@ public class ParticipantHandler {
 		return query.getResultList();
 	}
 	
+	public List<Participant> getAllParticipantsSorted() {
+		TypedQuery<Participant> query = em.createQuery("SELECT p FROM Participant p ORDER BY p.firstName, p.surname", Participant.class);
+		return query.getResultList();
+	}
+	
 	public Participant getParticipant(String phone) {
 		return em.find(Participant.class, phone);
 	}
