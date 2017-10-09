@@ -81,10 +81,6 @@ public class RegisterServlet extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String sex = request.getParameter("sex");
 		
-		name = StringEscapeUtils.escapeHtml(name);
-		surname = StringEscapeUtils.escapeHtml(surname);
-		phone = StringEscapeUtils.escapeHtml(phone);
-		
 		userExists = handler.exists(phone);
 		boolean validInput = form.validate(name, surname, phone, sex) && !userExists;
 		if (validInput) {
