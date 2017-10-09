@@ -28,6 +28,7 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("error", error);
+		error = "";
 		request.getRequestDispatcher("login.jsp").forward(request, response);
 	}
 	
@@ -38,6 +39,7 @@ public class LoginServlet extends HttpServlet {
 		Participant p = handler.getParticipant(phone);
 		if (p == null) {
 			error = "Må tilhøre registrert deltager";
+			response.sendRedirect("login");
 		} else {
 			HttpSession session = request.getSession(false);
 			if (session != null) {

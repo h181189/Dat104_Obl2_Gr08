@@ -12,7 +12,7 @@ import no.hvl.dat104.model.Participant;
 @Stateless
 public class ParticipantHandler {
 
-	@PersistenceContext(name = "RegistryPersistenceUnit")
+	@PersistenceContext(name = "ParticipantPersistenceUnit")
 	private EntityManager em;
 	
 	public void saveParticipant(Participant p) {
@@ -20,11 +20,6 @@ public class ParticipantHandler {
 	}
 	
 	public List<Participant> getAllParticipants() {
-		TypedQuery<Participant> query = em.createQuery("SELECT p FROM Participant p", Participant.class);
-		return query.getResultList();
-	}
-	
-	public List<Participant> getAllParticipantsSorted() {
 		TypedQuery<Participant> query = em.createQuery("SELECT p FROM Participant p ORDER BY p.firstName, p.surname", Participant.class);
 		return query.getResultList();
 	}
@@ -35,6 +30,10 @@ public class ParticipantHandler {
 	
 	public void payFor(String phone) {
 		getParticipant(phone).setPaid(true);
+	}
+	
+	public boolean exists(String phone) {
+		return em.find(Participant.class, phone) != null;
 	}
 	
 }

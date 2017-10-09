@@ -33,7 +33,7 @@ public class RegisterPaymentServlet extends HttpServlet {
 		}
 		
 		String phone = request.getParameter("participant-phone").toString();
-		
+		phone = phone.replaceAll("\\s+", "");
 		handler.payFor(phone);
 		
 		response.sendRedirect("payoverview");

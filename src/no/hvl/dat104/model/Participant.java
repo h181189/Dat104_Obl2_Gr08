@@ -28,6 +28,8 @@ public class Participant {
 	}
 
 	public String getPhone() {
+		String phone = this.phone;
+		phone = phone.substring(0, 3) + " " + phone.substring(3, 5) + " " + phone.substring(5);
 		return phone;
 	}
 

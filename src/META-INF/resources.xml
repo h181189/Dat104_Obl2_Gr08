@@ -4,7 +4,7 @@
 <resources>
 	<Resource id="myDataSource" type="javax.sql.DataSource">
 		jdbcDriver = org.postgresql.Driver
-		jdbcUrl = jdbc:postgresql://localhost:5432/dat104
+		jdbcUrl = jdbc:postgresql://localhost/dat104
 		userName = bendikjohansen
 		password = 
 	</Resource>

@@ -29,7 +29,7 @@ public class ParticipantListServlet extends HttpServlet {
 		} else {
 			String cPhone = (String) session.getAttribute("phone");
 			request.setAttribute("phone", cPhone);
-			List<Participant> participantList = databaseHandler.getAllParticipantsSorted();
+			List<Participant> participantList = databaseHandler.getAllParticipants();
 					
 			request.setAttribute("participant", participantList);
 			request.getRequestDispatcher("/participant.jsp").forward(request, response);

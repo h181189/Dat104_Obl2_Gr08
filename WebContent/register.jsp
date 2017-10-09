@@ -11,8 +11,8 @@
     <legend>Personlige data</legend>
     
     <p>Fornavn:
-    		<input type="text" name="firstname" value="${ oldName }" required />
-		<font color="red">${ firstNameError }</font>
+    		<input type="text" name="firstname" value="${ oldName }" />
+		<font color="red">${ nameError }</font>
 	</p>
     
     <p>Etternavn:
@@ -21,13 +21,13 @@
 	</p>
     
     <p>Mobil (8 siffer):
-	    	<input type="text" name="phone" value="${ oldPhone }" required />
+	    	<input type="text" name="phone" value="${ oldPhone }" />
 		<font color="red">${ phoneError }</font>
 	</p>
     
     <p>Kjønn:
-	    <input type="radio" name="sex" value="male" checked="checked" required />mann
-		<input type="radio" name="sex" value="female" required />kvinne
+	    <input type="radio" name="sex" value="male" ${ male } required />mann
+		<input type="radio" name="sex" value="female" ${ female } required />kvinne
 	</p>
 	
     <p><input type="submit" value="Meld meg på" /></p>

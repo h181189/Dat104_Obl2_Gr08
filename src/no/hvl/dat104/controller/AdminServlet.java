@@ -19,7 +19,6 @@ public class AdminServlet extends HttpServlet {
 	private String password;
 
 	public void init() throws ServletException {
-		super.init();
 		password = getInitParameter("password");
 	}
 

@@ -24,8 +24,7 @@ public class PayoverviewServlet extends HttpServlet {
 	@EJB
 	private final ParticipantHandler handler = new ParticipantHandler();
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		if (session == null) {
 			response.sendRedirect("administratorlogin?timeout");
@@ -40,9 +39,7 @@ public class PayoverviewServlet extends HttpServlet {
 		request.getRequestDispatcher("payoverview.jsp").forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		doGet(request, response);
 	}
 
