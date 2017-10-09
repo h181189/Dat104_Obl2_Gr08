@@ -1,3 +1,4 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,10 +9,10 @@
 <h2>Påmeldingsbekreftelse</h2>
 <p>Påmeldingen er mottatt for</p>
 <ul>
-	<li>${participant.firstName}</li>
-	<li>${participant.surname}</li>
-	<li>${participant.phone}</li>
-	<li>${sex}</li>
+	<li><c:out value="${participant.firstName}" /></li>
+	<li><c:out value="${participant.surname}" /></li>
+	<li><c:out value="${participant.phone}" /></li>
+	<li><c:out value="${sex}" /></li>
 </ul>
 
 <p><b>NB! Husk å betale til kassereren før festen!</b></p>

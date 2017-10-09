@@ -16,8 +16,8 @@
 			</tr>
 			<c:forEach var="participant" items="${participants}">
 			<tr>
-				<td>${ participant.firstName } ${ participant.surname }</td>
-				<td>${ participant.phone }</td>
+				<td><c:out value="${ participant.firstName } ${ participant.surname }" /></td>
+				<td><c:out value="${ participant.phone }" /></td>
 				<c:if test = "${ participant.paid }">
 					<td align="center">Betaling mottatt</td>
 				</c:if>

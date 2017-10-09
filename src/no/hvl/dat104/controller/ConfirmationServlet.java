@@ -32,7 +32,7 @@ public class ConfirmationServlet extends HttpServlet {
 		request.setAttribute("sex", sex);
 		session.setAttribute("phone", p.getPhone());
 		
-		request.getRequestDispatcher("confirmation.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/confirmation.jsp").forward(request, response);
 	}
 
 }

@@ -69,7 +69,7 @@ public class RegisterServlet extends HttpServlet {
 		request.setAttribute("female", female);
 		
 		form.clear();
-		request.getRequestDispatcher("register.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/register.jsp").forward(request, response);
 	}
 
 	/**

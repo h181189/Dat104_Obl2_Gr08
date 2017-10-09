@@ -36,7 +36,7 @@ public class PayoverviewServlet extends HttpServlet {
 
 		List<Participant> participants = handler.getAllParticipants();
 		request.setAttribute("participants", participants);
-		request.getRequestDispatcher("payoverview.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/payoverview.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {

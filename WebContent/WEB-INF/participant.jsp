@@ -17,7 +17,7 @@
 				<c:if test="${!participant.sex}">&#9792;</c:if>
 				</td>
 
-				<td>${ participant.firstName } ${ participant.surname }</td>
+				<td><c:out value="${ participant.firstName } ${ participant.surname }" /></td>
 			</tr>
 		</c:forEach>
 	</table>

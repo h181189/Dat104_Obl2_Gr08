@@ -34,7 +34,7 @@ public class AdminServlet extends HttpServlet {
 		}
 
 		request.setAttribute("error", error);
-		request.getRequestDispatcher("adminlogin.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/adminlogin.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

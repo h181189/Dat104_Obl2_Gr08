@@ -32,7 +32,7 @@ public class ParticipantListServlet extends HttpServlet {
 			List<Participant> participantList = databaseHandler.getAllParticipants();
 					
 			request.setAttribute("participant", participantList);
-			request.getRequestDispatcher("/participant.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/participant.jsp").forward(request, response);
 		}
 	}
 	

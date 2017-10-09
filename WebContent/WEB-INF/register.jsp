@@ -12,17 +12,17 @@
     
     <p>Fornavn:
     		<input type="text" name="firstname" value="${ oldName }" />
-		<font color="red">${ nameError }</font>
+		<font color="red"><c:out value="${ nameError }" /></font>
 	</p>
     
     <p>Etternavn:
     		<input type="text" name="surname"  value="${ oldSurname }" />
-		<font color="red">${ surnameError }</font>
+		<font color="red"><c:out value="${ surnameError }" /></font>
 	</p>
     
     <p>Mobil (8 siffer):
 	    	<input type="text" name="phone" value="${ oldPhone }" />
-		<font color="red">${ phoneError }</font>
+		<font color="red"><c:out value="${ phoneError }" /></font>
 	</p>
     
     <p>Kjønn:

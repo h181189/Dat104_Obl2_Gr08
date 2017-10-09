@@ -1,3 +1,4 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +18,7 @@
 <form method="POST" action="administratorlogin">
   <fieldset>
     <legend>Kasserer login</legend>
-    <p>Passord: <input type="password" name="password" value="allstars" /></p> <h3><%= request.getAttribute("error") %></h3>
+    <p>Passord: <input type="password" name="password" value="allstars" /></p> <h3><c:out value="${ error } /></h3>
     <input type="submit" value="Logg inn" />
   </fieldset>
 </form>
